@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Math Solver India – गणित MCQ क्विज़</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#1b1f33;--muted:#5d6480;--accent:#5b4bdb;--accent2:#ff8a3d;--ok:#12a150;--bad:#d93a3a;--line:#e1e4f0;--okbg:#e4f7ec;--badbg:#fde8e8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10121c;--card:#1a1d2e;--text:#eceefa;--muted:#9aa1c0;--accent:#8b7dff;--line:#2d3150;--okbg:#12301f;--badbg:#3a1a1a}}
+:root[data-theme="dark"]{--bg:#10121c;--card:#1a1d2e;--text:#eceefa;--muted:#9aa1c0;--accent:#8b7dff;--line:#2d3150;--okbg:#12301f;--badbg:#3a1a1a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:18px/1.7 "Noto Sans Devanagari",system-ui,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line)}
+.bar{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:8px 14px}
+.brand{font-weight:800;font-size:1.15rem;color:var(--accent)}
+nav{max-width:900px;margin:auto;display:flex;gap:6px;overflow-x:auto;padding:0 10px 8px;scrollbar-width:none}
+nav a{flex:none;padding:8px 16px;border-radius:99px;color:var(--muted);text-decoration:none;font-weight:600;font-size:1rem}
+nav a.on{background:var(--accent);color:#fff}
+main{max-width:900px;margin:auto;padding:18px 14px 40px}
+.view{animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1{font-size:1.9rem;line-height:1.3;margin:6px 0 10px}h2{font-size:1.4rem;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px}
+.muted{color:var(--muted)}
+.btn{display:inline-block;border:0;border-radius:14px;background:var(--accent);color:#fff;font:inherit;font-weight:700;padding:13px 22px;cursor:pointer;text-decoration:none}
+.btn.alt{background:var(--card);color:var(--accent);border:2px solid var(--accent)}
+.btn:disabled{opacity:.5}
+.hero{background:linear-gradient(135deg,var(--accent),#8e5bff);color:#fff;border-radius:22px;padding:26px 20px;margin-bottom:16px}
+.hero .btn{background:#fff;color:var(--accent)}.hero .btn.alt{background:transparent;color:#fff;border-color:#fff}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+textarea{width:100%;min-height:130px;padding:14px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--text);font:inherit;resize:vertical}
+textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+#prev{max-width:220px;border-radius:12px;display:block;margin-top:10px}
+.err{background:var(--badbg);color:var(--bad);border-radius:14px;padding:14px;font-weight:600}
+ol.steps{padding-left:24px}ol.steps li{margin-bottom:12px}
+.ans{background:var(--okbg);border:2px solid var(--ok);border-radius:16px;padding:16px;font-size:1.25rem;font-weight:700}
+.ans small{display:block;color:var(--ok);font-size:.95rem}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.chip{flex:none;border:2px solid var(--line);background:var(--card);color:var(--text);border-radius:99px;padding:6px 16px;font:inherit;font-size:.95rem;cursor:pointer}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pb{height:12px;background:var(--line);border-radius:9px;overflow:hidden;margin:10px 0}
+.pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
+.stat{display:flex;justify-content:space-between;font-weight:700}
+.opt{display:block;width:100%;text-align:left;margin-top:10px;padding:14px;border:2px solid var(--line);border-radius:14px;background:var(--card);color:var(--text);font:inherit;cursor:pointer}
+.opt.sel{border-color:var(--accent);background:var(--bg)}.opt.right{border-color:var(--ok);background:var(--okbg)}.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.qt{font-size:1.2rem;font-weight:600}
+mjx-container{font-size:112%!important}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 14px 30px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['$','$']]},svg:{fontCache:'global'}};</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+</head>
+<body>
+<header>
+<div class="bar"><span class="brand">➗ Math Solver India</span><button class="chip" id="th" aria-label="डार्क मोड">🌙</button></div>
+<nav id="nav"><a href="#home">होम</a><a href="#quiz">MCQ क्विज़</a><a href="#topics">विषय</a><a href="#about">हमारे बारे में</a></nav>
+</header>
+<main>
+
+<section class="view" id="v-home">
+<div class="hero"><h1>गणित अब आसान!</h1><p>कक्षा 6 से 12 तक के गणित के MCQ खेलो — हर बार नए सवाल, सही जवाब और आसान हिंदी में व्याख्या। कोई लॉगिन नहीं।</p>
+<div class="row"><a class="btn" href="#quiz">क्विज़ खेलो</a><a class="btn alt" href="#topics">विषय देखो</a></div></div>
+<div class="grid">
+<div class="card"><h2>🎯 अनगिनत MCQ</h2><p class="muted">हर बार नए सवाल, कभी खत्म नहीं होते।</p></div>
+<div class="card"><h2>📊 स्कोर और प्रोग्रेस</h2><p class="muted">हर राउंड में 10 सवाल, स्कोर और प्रोग्रेस बार के साथ।</p></div>
+<div class="card"><h2>✅ सही जवाब + व्याख्या</h2><p class="muted">जमा करते ही सही उत्तर और छोटी व्याख्या दिखती है।</p></div>
+</div></section>
+
+<section class="view" id="v-quiz" hidden>
+<div class="card"><div class="chips" id="qchips"></div>
+<div class="stat" style="margin-top:12px"><span id="qn"></span><span id="sc"></span></div><div class="pb"><i id="pbar"></i></div>
+<div id="qbox"></div></div></section>
+
+<section class="view" id="v-topics" hidden><h1>विषय (कक्षा 6–12)</h1><div class="grid" id="tgrid"></div></section>
+
+<section class="view" id="v-about" hidden><div class="card"><h2>Math Solver India के बारे में</h2>
+<p>यह वेबसाइट स्कूल के बच्चों के लिए बनी है ताकि गणित डर नहीं, मज़ा बने। यहाँ सिर्फ MCQ अभ्यास है — कक्षा 6 से 12 के विषयों पर।</p>
+<p class="muted">MCQ क्विज़ के सवाल इसी पेज पर अपने आप बनते हैं, इसलिए वे कभी खत्म नहीं होते।</p></div></section>
+</main>
+<footer>© Math Solver India</footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const tex=el=>{try{window.MathJax&&MathJax.typesetPromise&&MathJax.typesetPromise([el]).catch(()=>{})}catch(e){}};
+/* theme */
+const root=document.documentElement;let th;try{th=localStorage.getItem('t')}catch(e){}
+th=th||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+const setTh=t=>{root.dataset.theme=t;$('#th').textContent=t==='dark'?'☀️':'🌙';try{localStorage.setItem('t',t)}catch(e){}};
+setTh(th);$('#th').onclick=()=>setTh(root.dataset.theme==='dark'?'light':'dark');
+/* routing */
+function route(){const v=(location.hash||'#home').slice(1);const ok=['home','quiz','topics','about'].includes(v)?v:'home';
+$$('.view').forEach(x=>x.hidden=x.id!=='v-'+ok);$$('#nav a').forEach(a=>a.classList.toggle('on',a.hash==='#'+ok));
+window.scrollTo(0,0);if(ok==='quiz'&&!cur)newRound();if(ok==='topics'||ok==='home')tex(document.body)}
+addEventListener('hashchange',route);
+
+/* ---------- QUIZ (unlimited, generated here) ---------- */
+const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1)),pick=a=>a[R(0,a.length-1)],gcd=(a,b)=>b?gcd(b,a%b):a;
+const sh=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+const M=x=>'$'+x+'$',fr=(n,d)=>{const g=gcd(n,d);n/=g;d/=g;return d===1?''+n:'\\frac{'+n+'}{'+d+'}'};
+const nd=v=>sh([v+1,v-1,v+2,v-2,v+10,v-10,v*2,Math.round(v/2),v+5]).filter(x=>x!==v&&x>0);
+function mk(q,a,c,exp){const o=[a];for(const x of c)if(!o.includes(x)&&o.length<4)o.push(x);while(o.length<4){const f=M(R(2,99));if(!o.includes(f))o.push(f)}return{q,a,o:sh(o),exp}}
+const G={
+frac(){const a=R(1,5),b=R(2,9),c=R(1,5),d=R(2,9),n=a*d+c*b,D=b*d,A=M(fr(n,D));
+return mk(`${M('\\frac{'+a+'}{'+b+'}+\\frac{'+c+'}{'+d+'}')} का सरल मान क्या है?`,A,[M(fr(a+c,b+d)),M(fr(n+1,D)),M(fr(a*c,b*d)),M(fr(n,b+d))],`हर समान करने पर ${M('\\frac{'+a*d+'+'+c*b+'}{'+D+'}='+fr(n,D))}`)},
+pct(){const p=pick([5,10,12,15,20,25,30,40,50,60]),N=R(2,40)*20,v=p*N/100;
+return mk(`${M(N)} का ${M(p+'\\%')} कितना होता है?`,M(v),nd(v).map(M),`${M(N+'\\times\\frac{'+p+'}{100}='+v)}`)},
+pl(){const cp=R(5,50)*20,p=pick([5,10,15,20,25,30,40]),sp=cp*(100+p)/100;
+return mk(`एक वस्तु ₹${cp} में खरीदकर ${p}% लाभ पर बेची गई। विक्रय मूल्य कितना है?`,'₹'+sp,nd(sp).map(x=>'₹'+x),`लाभ = ${M(cp+'\\times\\frac{'+p+'}{100}='+(sp-cp))}, इसलिए SP = ${cp}+${sp-cp} = ${sp}`)},
+alg(){const x=R(1,12),a=R(2,9),b=R(1,20),c=a*x+b;
+return mk(`हल करो: ${M(a+'x+'+b+'='+c)}`,M('x='+x),nd(x).map(v=>M('x='+v)),`${M(a+'x='+c+'-'+b+'='+(c-b))}, फिर ${M('x=\\frac{'+(c-b)+'}{'+a+'}='+x)}`)},
+exp(){if(Math.random()<.5){const a=R(2,5),m=R(2,6),n=R(2,6),s=m+n;
+return mk(`${M(a+'^{'+m+'}\\times '+a+'^{'+n+'}')} बराबर है:`,M(a+'^{'+s+'}'),[M(a+'^{'+m*n+'}'),M(a+'^{'+(s+1)+'}'),M(a+'^{'+(s-1)+'}'),M(a+'^{'+(s+2)+'}')],`आधार समान हो तो घात जुड़ती हैं: ${M(m+'+'+n+'='+s)}`)}
+const r=R(4,20);return mk(`${M('\\sqrt{'+r*r+'}')} का मान क्या है?`,M(r),nd(r).map(M),`${M(r+'\\times '+r+'='+r*r)}, इसलिए वर्गमूल ${r} है`)},
+geo(){const a=R(30,80),b=R(30,80),c=180-a-b;
+return mk(`त्रिभुज के दो कोण ${a}° और ${b}° हैं। तीसरा कोण कितना है?`,c+'°',nd(c).map(x=>x+'°'),`त्रिभुज के कोणों का योग 180° होता है: 180 − ${a} − ${b} = ${c}`)},
+men(){if(Math.random()<.5){const l=R(5,25),b=R(3,15),A=l*b;
+return mk(`एक आयत की लंबाई ${l} सेमी और चौड़ाई ${b} सेमी है। क्षेत्रफल कितना है?`,A+' सेमी²',nd(A).map(x=>x+' सेमी²'),`क्षेत्रफल = लंबाई × चौड़ाई = ${l}×${b} = ${A}`)}
+const k=R(1,4),r=7*k,A=154*k*k;return mk(`एक वृत्त की त्रिज्या ${r} सेमी है। क्षेत्रफल कितना है? (${M('\\pi=\\frac{22}{7}')})`,A+' सेमी²',nd(A).map(x=>x+' सेमी²'),`${M('\\pi r^2=\\frac{22}{7}\\times '+r+'\\times '+r+'='+A)}`)},
+num(){const g=R(2,9),p=pick([2,3,4,5]),q=pick([5,7,9,11]),x=g*p,y=g*q,h=Math.random()<.5;
+return mk(`${x} और ${y} का ${h?'म.स. (HCF)':'ल.स. (LCM)'} क्या है?`,''+(h?g:g*p*q),h?nd(g).map(String):nd(g*p*q).map(String),h?`दोनों संख्याओं का सबसे बड़ा उभयनिष्ठ गुणनखंड ${g} है`:`LCM = ${x}×${y} ÷ HCF = ${g*p*q}`)},
+ari(){const a=R(5,20),b=R(2,9),c=R(2,9),d=R(1,15),v=a+b*c-d;
+return mk(`सरल करो: ${M(a+'+'+b+'\\times '+c+'-'+d)}`,M(v),nd(v).map(M),`पहले गुणा: ${b}×${c}=${b*c}, फिर ${a}+${b*c}−${d}=${v}`)}};
+const TOP=[['frac','भिन्न','6–8','$\\frac{3}{4}+\\frac{5}{6}$ का मान निकालो'],['pct','प्रतिशत','6–8','240 का 15% कितना होता है?'],['pl','लाभ और हानि','7–10','500 रुपये की चीज़ 20% लाभ पर बेची गई, विक्रय मूल्य बताओ'],['alg','बीजगणित और समीकरण','7–12','हल करो: $3x+5=20$'],['exp','घातांक और मूल','8–10','$2^3\\times 2^4$ और $\\sqrt{169}$ का मान निकालो'],['geo','ज्यामिति','6–10','त्रिभुज के दो कोण 50° और 60° हैं, तीसरा कोण निकालो'],['men','क्षेत्रमिति','7–12','त्रिज्या 14 सेमी वाले वृत्त का क्षेत्रफल निकालो'],['num','संख्या पद्धति','6–10','12 और 18 का ल.स. और म.स. निकालो'],['ari','अंकगणित','6–8','सरल करो: $12+6\\times 3-4$']];
+let cur=null,tp='all',score=0,idx=0,picked=null,done=false;const N=10;
+$('#qchips').innerHTML=[['all','सभी विषय']].concat(TOP.map(t=>[t[0],t[1]])).map(t=>`<button class="chip${t[0]==='all'?' on':''}" data-k="${t[0]}">${t[1]}</button>`).join('');
+$('#qchips').onclick=e=>{const k=e.target.dataset.k;if(!k)return;tp=k;$$('#qchips .chip').forEach(c=>c.classList.toggle('on',c.dataset.k===k));newRound()};
+function newRound(){score=0;idx=0;next()}
+function next(){picked=null;done=false;if(idx>=N)return end();const k=tp==='all'?pick(TOP)[0]:tp;cur=G[k]();draw()}
+function draw(){$('#qn').textContent='सवाल '+(idx+1)+' / '+N;$('#sc').textContent='⭐ स्कोर: '+score;$('#pbar').style.width=(idx/N*100)+'%';
+$('#qbox').innerHTML=`<p class="qt">${cur.q}</p>`+cur.o.map((o,i)=>`<button class="opt" data-i="${i}">${'अबसद'[i]}) ${o}</button>`).join('')+'<div class="row"><button class="btn" id="sub" disabled>उत्तर जमा करो</button></div><div id="fb"></div>';tex($('#qbox'))}
+$('#qbox').onclick=e=>{const b=e.target.closest('.opt'),s=e.target.closest('#sub'),n=e.target.closest('#nx'),r=e.target.closest('#rs');
+if(b&&!done){picked=+b.dataset.i;$$('.opt').forEach(x=>x.classList.toggle('sel',x===b));$('#sub').disabled=false}
+if(s&&!done&&picked!==null){done=true;const ok=cur.o[picked]===cur.a;if(ok)score++;
+$$('.opt').forEach((x,i)=>{if(cur.o[i]===cur.a)x.classList.add('right');else if(i===picked)x.classList.add('wrong')});
+$('#sc').textContent='⭐ स्कोर: '+score;$('#pbar').style.width=((idx+1)/N*100)+'%';
+$('#fb').innerHTML=`<p><b>${ok?'🎉 सही जवाब!':'❌ गलत — सही उत्तर: '+cur.a}</b></p><p class="muted">${cur.exp}</p><button class="btn" id="nx">${idx+1<N?'अगला सवाल':'नतीजा देखो'}</button>`;s.hidden=true;tex($('#fb'))}
+if(n){idx++;next()}if(r)newRound()};
+function end(){$('#pbar').style.width='100%';$('#qn').textContent='क्विज़ पूरा!';
+$('#qbox').innerHTML=`<h2>${score>=8?'🏆 शानदार!':score>=5?'👍 अच्छा प्रयास!':'💪 और अभ्यास करो!'}</h2><p class="qt">तुम्हारा स्कोर: ${score} / ${N}</p><button class="btn" id="rs">नए सवालों के साथ फिर खेलो</button>`}
+/* topics */
+$('#tgrid').innerHTML=TOP.map(t=>`<div class="card"><h2>${t[1]}</h2><p class="muted">कक्षा ${t[2]}</p><p>उदाहरण: ${t[3]}</p><div class="row"><button class="btn" data-q="${t[0]}">इस विषय का क्विज़ खेलो</button></div></div>`).join('');
+$('#tgrid').onclick=e=>{const b=e.target.closest('button');if(!b)return;
+if(b.dataset.q){tp=b.dataset.q;$$('#qchips .chip').forEach(c=>c.classList.toggle('on',c.dataset.k===tp));cur=null;location.hash='#quiz';if(location.hash==='#quiz')route()}};
+route();
+</script>
+</body>
+</html>
