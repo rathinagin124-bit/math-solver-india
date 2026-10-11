@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Math Solver India – गणित MCQ क्विज़</title>
+<meta name="description" content="Math Solver India – कक्षा 6 से 12 के लिए मुफ़्त गणित MCQ क्विज़। आसान, मध्यम और कठिन स्तर, भिन्न, प्रतिशत, बीजगणित, ज्यामिति, क्षेत्रमिति और बहुत कुछ। बिना लॉगिन।">
+<meta name="keywords" content="Math Solver India, गणित क्विज़, गणित MCQ, कक्षा 6 से 12 गणित, math quiz in Hindi, maths MCQ Hindi, भिन्न, प्रतिशत, बीजगणित, ज्यामिति, क्षेत्रमिति">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rathinagin124-bit.github.io/math-solver-india/">
+<meta name="theme-color" content="#5b4bdb">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Math Solver India – गणित MCQ क्विज़">
+<meta property="og:description" content="कक्षा 6 से 12 के लिए मुफ़्त गणित MCQ क्विज़ – आसान, मध्यम और कठिन स्तर।">
+<meta property="og:url" content="https://rathinagin124-bit.github.io/math-solver-india/">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f6f7fb;--card:#fff;--text:#1b1f33;--muted:#5d6480;--accent:#5b4bdb;--accent2:#ff8a3d;--ok:#12a150;--bad:#d93a3a;--line:#e1e4f0;--okbg:#e4f7ec;--badbg:#fde8e8;
@@ -63,7 +72,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 14px 30px
 <main>
 
 <section class="view" id="v-home">
-<div class="hero"><h1>गणित अब आसान!</h1><p>कक्षा 6 से 12 तक के गणित के MCQ खेलो — हर बार नए सवाल, सही जवाब और आसान हिंदी में व्याख्या। कोई लॉगिन नहीं।</p>
+<div class="hero"><div style="font-weight:800;letter-spacing:.5px;opacity:.9">➗ MATH SOLVER INDIA</div><h1>गणित अब आसान!</h1><p>कक्षा 6 से 12 तक के गणित के MCQ खेलो — हर बार नए सवाल, सही जवाब और आसान हिंदी में व्याख्या। कोई लॉगिन नहीं।</p>
 <div class="row"><a class="btn" href="#quiz">क्विज़ खेलो</a><a class="btn alt" href="#topics">विषय देखो</a></div></div>
 <div class="grid">
 <div class="card"><h2>🎯 अनगिनत MCQ</h2><p class="muted">हर बार नए सवाल, कभी खत्म नहीं होते।</p></div>
@@ -72,7 +81,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 14px 30px
 </div></section>
 
 <section class="view" id="v-quiz" hidden>
-<div class="card"><div class="chips" id="qchips"></div>
+<div class="card"><div class="chips" id="lchips" style="margin-bottom:10px" aria-label="स्तर"></div><div class="chips" id="qchips"></div>
 <div class="stat" style="margin-top:12px"><span id="qn"></span><span id="sc"></span></div><div class="pb"><i id="pbar"></i></div>
 <div id="qbox"></div></div></section>
 
@@ -82,7 +91,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 14px 30px
 <p>यह वेबसाइट स्कूल के बच्चों के लिए बनी है ताकि गणित डर नहीं, मज़ा बने। यहाँ सिर्फ MCQ अभ्यास है — कक्षा 6 से 12 के विषयों पर।</p>
 <p class="muted">MCQ क्विज़ के सवाल इसी पेज पर अपने आप बनते हैं, इसलिए वे कभी खत्म नहीं होते।</p></div></section>
 </main>
-<footer>© Math Solver India</footer>
+<footer>© Math Solver India — कक्षा 6 से 12 के लिए गणित क्विज़</footer>
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -106,33 +115,56 @@ const M=x=>'$'+x+'$',fr=(n,d)=>{const g=gcd(n,d);n/=g;d/=g;return d===1?''+n:'\\
 const nd=v=>sh([v+1,v-1,v+2,v-2,v+10,v-10,v*2,Math.round(v/2),v+5]).filter(x=>x!==v&&x>0);
 function mk(q,a,c,exp){const o=[a];for(const x of c)if(!o.includes(x)&&o.length<4)o.push(x);while(o.length<4){const f=M(R(2,99));if(!o.includes(f))o.push(f)}return{q,a,o:sh(o),exp}}
 const G={
-frac(){const a=R(1,5),b=R(2,9),c=R(1,5),d=R(2,9),n=a*d+c*b,D=b*d,A=M(fr(n,D));
-return mk(`${M('\\frac{'+a+'}{'+b+'}+\\frac{'+c+'}{'+d+'}')} का सरल मान क्या है?`,A,[M(fr(a+c,b+d)),M(fr(n+1,D)),M(fr(a*c,b*d)),M(fr(n,b+d))],`हर समान करने पर ${M('\\frac{'+a*d+'+'+c*b+'}{'+D+'}='+fr(n,D))}`)},
-pct(){const p=pick([5,10,12,15,20,25,30,40,50,60]),N=R(2,40)*20,v=p*N/100;
-return mk(`${M(N)} का ${M(p+'\\%')} कितना होता है?`,M(v),nd(v).map(M),`${M(N+'\\times\\frac{'+p+'}{100}='+v)}`)},
-pl(){const cp=R(5,50)*20,p=pick([5,10,15,20,25,30,40]),sp=cp*(100+p)/100;
-return mk(`एक वस्तु ₹${cp} में खरीदकर ${p}% लाभ पर बेची गई। विक्रय मूल्य कितना है?`,'₹'+sp,nd(sp).map(x=>'₹'+x),`लाभ = ${M(cp+'\\times\\frac{'+p+'}{100}='+(sp-cp))}, इसलिए SP = ${cp}+${sp-cp} = ${sp}`)},
-alg(){const x=R(1,12),a=R(2,9),b=R(1,20),c=a*x+b;
-return mk(`हल करो: ${M(a+'x+'+b+'='+c)}`,M('x='+x),nd(x).map(v=>M('x='+v)),`${M(a+'x='+c+'-'+b+'='+(c-b))}, फिर ${M('x=\\frac{'+(c-b)+'}{'+a+'}='+x)}`)},
-exp(){if(Math.random()<.5){const a=R(2,5),m=R(2,6),n=R(2,6),s=m+n;
-return mk(`${M(a+'^{'+m+'}\\times '+a+'^{'+n+'}')} बराबर है:`,M(a+'^{'+s+'}'),[M(a+'^{'+m*n+'}'),M(a+'^{'+(s+1)+'}'),M(a+'^{'+(s-1)+'}'),M(a+'^{'+(s+2)+'}')],`आधार समान हो तो घात जुड़ती हैं: ${M(m+'+'+n+'='+s)}`)}
-const r=R(4,20);return mk(`${M('\\sqrt{'+r*r+'}')} का मान क्या है?`,M(r),nd(r).map(M),`${M(r+'\\times '+r+'='+r*r)}, इसलिए वर्गमूल ${r} है`)},
-geo(){const a=R(30,80),b=R(30,80),c=180-a-b;
-return mk(`त्रिभुज के दो कोण ${a}° और ${b}° हैं। तीसरा कोण कितना है?`,c+'°',nd(c).map(x=>x+'°'),`त्रिभुज के कोणों का योग 180° होता है: 180 − ${a} − ${b} = ${c}`)},
-men(){if(Math.random()<.5){const l=R(5,25),b=R(3,15),A=l*b;
+frac(L){if(L===1){const b=R(3,12),a=R(1,b-1),c=R(1,b-1);return mk(`${M('\\frac{'+a+'}{'+b+'}+\\frac{'+c+'}{'+b+'}')} का सरल मान क्या है?`,M(fr(a+c,b)),[M(fr(a+c,2*b)),M(fr(a+c+1,b)),M(fr(a*c,b)),M(fr(a+c-1,b))],`हर समान है, इसलिए अंश जोड़ो: ${M('\\frac{'+a+'+'+c+'}{'+b+'}='+fr(a+c,b))}`)}
+if(L===2){const a=R(1,5),b=R(2,9),c=R(1,5),d=R(2,9),n=a*d+c*b,D=b*d;
+return mk(`${M('\\frac{'+a+'}{'+b+'}+\\frac{'+c+'}{'+d+'}')} का सरल मान क्या है?`,M(fr(n,D)),[M(fr(a+c,b+d)),M(fr(n+1,D)),M(fr(a*c,b*d)),M(fr(n,b+d))],`हर समान करने पर ${M('\\frac{'+a*d+'+'+c*b+'}{'+D+'}='+fr(n,D))}`)}
+let a,b,c,d,e,f,n,D;do{a=R(1,5);b=R(2,9);c=R(1,5);d=R(2,9);e=R(1,4);f=R(2,9);D=b*d*f;n=a*d*f+c*b*f-e*b*d}while(n<=0);
+return mk(`${M('\\frac{'+a+'}{'+b+'}+\\frac{'+c+'}{'+d+'}-\\frac{'+e+'}{'+f+'}')} का सरल मान क्या है?`,M(fr(n,D)),[M(fr(n+1,D)),M(fr(n+2,D)),M(fr(n,D+1)),M(fr(n+D,D))],`तीनों का हर ${D} करो: ${M('\\frac{'+a*d*f+'+'+c*b*f+'-'+e*b*d+'}{'+D+'}='+fr(n,D))}`)},
+pct(L){let p,N,v;if(L===1){p=pick([10,20,25,50]);N=R(1,10)*20;v=p*N/100;return mk(`${M(N)} का ${M(p+'\\%')} कितना होता है?`,M(v),nd(v).map(M),`${M(N+'\\times\\frac{'+p+'}{100}='+v)}`)}
+if(L===2){p=pick([5,10,12,15,20,25,30,40,60]);N=R(2,30)*100;v=p*N/100;return mk(`${M(N)} का ${M(p+'\\%')} कितना होता है?`,M(v),nd(v).map(M),`${M(N+'\\times\\frac{'+p+'}{100}='+v)}`)}
+p=pick([10,20,25,50]);const q=pick([10,20,25]);N=R(1,8)*400;v=N*(100+p)*(100-q)/10000;
+return mk(`एक संख्या ${N} है। उसे ${p}% बढ़ाया गया, फिर नई संख्या को ${q}% घटाया गया। अंतिम संख्या क्या है?`,M(v),nd(v).concat([N*(100+p-q)/100]).map(M),`बढ़ाने पर ${N*(100+p)/100}, फिर ${q}% घटाने पर ${v}`)},
+pl(L){if(L===1){const cp=R(5,30)*10,pr=R(1,9)*10;return mk(`एक वस्तु ₹${cp} में खरीदी और ₹${cp+pr} में बेची गई। लाभ कितना हुआ?`,'₹'+pr,nd(pr).map(x=>'₹'+x),`लाभ = विक्रय मूल्य − क्रय मूल्य = ${cp+pr} − ${cp} = ${pr}`)}
+if(L===2){const cp=R(5,50)*20,p=pick([5,10,15,20,25,30,40]),sp=cp*(100+p)/100;
+return mk(`एक वस्तु ₹${cp} में खरीदकर ${p}% लाभ पर बेची गई। विक्रय मूल्य कितना है?`,'₹'+sp,nd(sp).map(x=>'₹'+x),`लाभ = ${M(cp+'\\times\\frac{'+p+'}{100}='+(sp-cp))}, इसलिए SP = ${cp}+${sp-cp} = ${sp}`)}
+const l=pick([5,10,20,25,40]),cp=R(5,50)*20,sp=cp*(100-l)/100;
+return mk(`एक वस्तु ${l}% हानि पर ₹${sp} में बेची गई। उसका क्रय मूल्य (CP) कितना है?`,'₹'+cp,[sp,cp+(cp-sp),cp-10,cp+10,cp*2].map(x=>'₹'+x),`SP = CP का ${100-l}%, इसलिए CP = ${M('\\frac{'+sp+'\\times 100}{'+(100-l)+'}='+cp)}`)},
+alg(L){const x=R(1,12);if(L===1){const b=R(1,15);if(Math.random()<.5)return mk(`हल करो: ${M('x+'+b+'='+(x+b))}`,M('x='+x),nd(x).map(v=>M('x='+v)),`दोनों तरफ से ${b} घटाओ: ${M('x='+(x+b)+'-'+b+'='+x)}`);const a=R(2,9);return mk(`हल करो: ${M(a+'x='+a*x)}`,M('x='+x),nd(x).map(v=>M('x='+v)),`दोनों तरफ ${a} से भाग दो: ${M('x=\\frac{'+a*x+'}{'+a+'}='+x)}`)}
+if(L===2){const a=R(2,9),b=R(1,20),c=a*x+b;return mk(`हल करो: ${M(a+'x+'+b+'='+c)}`,M('x='+x),nd(x).map(v=>M('x='+v)),`${M(a+'x='+c+'-'+b+'='+(c-b))}, फिर ${M('x=\\frac{'+(c-b)+'}{'+a+'}='+x)}`)}
+const cc=R(1,5),a=cc+R(1,5),b=R(1,20),d=(a-cc)*x+b;
+return mk(`हल करो: ${M(a+'x+'+b+'='+cc+'x+'+d)}`,M('x='+x),nd(x).map(v=>M('x='+v)),`x वाले पद एक तरफ लाओ: ${M((a-cc)+'x='+d+'-'+b+'='+(d-b))}, इसलिए ${M('x='+x)}`)},
+exp(L){if(L===3){const a=R(2,4),m=R(2,6),n=R(2,6),k=R(1,m+n-1),s=m+n-k;
+return mk(`${M('\\frac{'+a+'^{'+m+'}\\times '+a+'^{'+n+'}}{'+a+'^{'+k+'}}')} बराबर है:`,M(a+'^{'+s+'}'),[M(a+'^{'+(m+n+k)+'}'),M(a+'^{'+(s+1)+'}'),M(a+'^{'+(s-1)+'}'),M(a+'^{'+(m*n-k)+'}'),M(a+'^{'+(s+2)+'}')],`ऊपर घात जोड़ो: ${m}+${n}=${m+n}, फिर नीचे वाली घात घटाओ: ${m+n}−${k}=${s}`)}
+if(Math.random()<.5){const a=L===1?R(2,3):R(2,5),m=L===1?R(1,3):R(2,6),n=L===1?R(1,3):R(2,6),s=m+n;
+return mk(`${M(a+'^{'+m+'}\\times '+a+'^{'+n+'}')} बराबर है:`,M(a+'^{'+s+'}'),[M(a+'^{'+m*n+'}'),M(a+'^{'+(s+1)+'}'),M(a+'^{'+(s+2)+'}'),M(a+'^{'+(s-1)+'}')],`आधार समान हो तो घात जुड़ती हैं: ${M(m+'+'+n+'='+s)}`)}
+const r=L===1?R(2,10):R(4,20);return mk(`${M('\\sqrt{'+r*r+'}')} का मान क्या है?`,M(r),nd(r).map(M),`${M(r+'\\times '+r+'='+r*r)}, इसलिए वर्गमूल ${r} है`)},
+geo(L){if(L===1){const a=R(10,80),su=Math.random()<.5,v=su?180-a:90-a;return mk(`${a}° कोण का ${su?'संपूरक (सप्लीमेंट्री)':'पूरक (कॉम्प्लीमेंट्री)'} कोण कितना है?`,v+'°',nd(v).map(x=>x+'°'),su?`संपूरक कोणों का योग 180° होता है: 180 − ${a} = ${v}`:`पूरक कोणों का योग 90° होता है: 90 − ${a} = ${v}`)}
+if(L===2){const a=R(30,80),b=R(30,80),c=180-a-b;return mk(`त्रिभुज के दो कोण ${a}° और ${b}° हैं। तीसरा कोण कितना है?`,c+'°',nd(c).map(x=>x+'°'),`त्रिभुज के कोणों का योग 180° होता है: 180 − ${a} − ${b} = ${c}`)}
+const n=pick([5,6,8,9,10,12]),v=180*(n-2)/n;return mk(`एक सम (समबहुभुज) ${n}-भुजा वाले बहुभुज का प्रत्येक आंतरिक कोण कितना है?`,v+'°',[360/n,180-v,v+10,v-10,v+20,v-15].map(x=>x+'°'),`आंतरिक कोणों का योग = ${M('(n-2)\\times 180='+180*(n-2))}°, इसे ${n} से भाग दो = ${v}°`)},
+men(L){if(L===1){if(Math.random()<.5){const s=R(3,15);return mk(`एक वर्ग की भुजा ${s} सेमी है। उसका क्षेत्रफल कितना है?`,s*s+' सेमी²',nd(s*s).map(x=>x+' सेमी²'),`वर्ग का क्षेत्रफल = भुजा × भुजा = ${s}×${s} = ${s*s}`)}
+const l=R(5,25),b=R(3,15),P=2*(l+b);return mk(`एक आयत की लंबाई ${l} सेमी और चौड़ाई ${b} सेमी है। परिमाप कितना है?`,P+' सेमी',[l*b,P+2,P-2,l+b,P+4].map(x=>x+' सेमी'),`परिमाप = 2×(लंबाई + चौड़ाई) = 2×(${l}+${b}) = ${P}`)}
+if(L===2){if(Math.random()<.5){const l=R(5,25),b=R(3,15),A=l*b;
 return mk(`एक आयत की लंबाई ${l} सेमी और चौड़ाई ${b} सेमी है। क्षेत्रफल कितना है?`,A+' सेमी²',nd(A).map(x=>x+' सेमी²'),`क्षेत्रफल = लंबाई × चौड़ाई = ${l}×${b} = ${A}`)}
-const k=R(1,4),r=7*k,A=154*k*k;return mk(`एक वृत्त की त्रिज्या ${r} सेमी है। क्षेत्रफल कितना है? (${M('\\pi=\\frac{22}{7}')})`,A+' सेमी²',nd(A).map(x=>x+' सेमी²'),`${M('\\pi r^2=\\frac{22}{7}\\times '+r+'\\times '+r+'='+A)}`)},
-num(){const g=R(2,9),p=pick([2,3,4,5]),q=pick([5,7,9,11]),x=g*p,y=g*q,h=Math.random()<.5;
-return mk(`${x} और ${y} का ${h?'म.स. (HCF)':'ल.स. (LCM)'} क्या है?`,''+(h?g:g*p*q),h?nd(g).map(String):nd(g*p*q).map(String),h?`दोनों संख्याओं का सबसे बड़ा उभयनिष्ठ गुणनखंड ${g} है`:`LCM = ${x}×${y} ÷ HCF = ${g*p*q}`)},
-ari(){const a=R(5,20),b=R(2,9),c=R(2,9),d=R(1,15),v=a+b*c-d;
-return mk(`सरल करो: ${M(a+'+'+b+'\\times '+c+'-'+d)}`,M(v),nd(v).map(M),`पहले गुणा: ${b}×${c}=${b*c}, फिर ${a}+${b*c}−${d}=${v}`)}};
+const k=R(1,4),r=7*k,A=154*k*k;return mk(`एक वृत्त की त्रिज्या ${r} सेमी है। क्षेत्रफल कितना है? (${M('\\pi=\\frac{22}{7}')})`,A+' सेमी²',nd(A).map(x=>x+' सेमी²'),`${M('\\pi r^2=\\frac{22}{7}\\times '+r+'\\times '+r+'='+A)}`)}
+const l=R(3,12),b=R(3,12),hh=R(3,12);if(Math.random()<.5){const V=l*b*hh;return mk(`एक घनाभ की लंबाई ${l}, चौड़ाई ${b} और ऊँचाई ${hh} सेमी है। आयतन कितना है?`,V+' सेमी³',[V+l,V-b,l*b+hh,2*(l*b+b*hh+hh*l),V+10].map(x=>x+' सेमी³'),`आयतन = ${l}×${b}×${hh} = ${V}`)}
+const T=2*(l*b+b*hh+hh*l);return mk(`एक घनाभ की लंबाई ${l}, चौड़ाई ${b} और ऊँचाई ${hh} सेमी है। संपूर्ण पृष्ठीय क्षेत्रफल कितना है?`,T+' सेमी²',[l*b*hh,T+10,T-10,l*b+b*hh+hh*l,T+2*l].map(x=>x+' सेमी²'),`संपूर्ण पृष्ठ = ${M('2(lb+bh+hl)=2('+l*b+'+'+b*hh+'+'+hh*l+')='+T)}`)},
+num(L){if(L===1){const P=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47],C=[4,6,8,9,10,12,14,15,16,18,21,22,25,27,33,35,39,49,51,57],a=pick(P);return mk('इनमें से कौन-सी संख्या अभाज्य (प्राइम) है?',''+a,sh(C).slice(0,4).map(String),`${a} के सिर्फ दो गुणनखंड हैं: 1 और ${a} — बाकी संख्याएँ भाज्य हैं`)}
+const g=R(2,9),p=pick([2,3,4,5]),q=pick([5,7,9,11]),x=g*p,y=g*q;
+if(L===2){const h=Math.random()<.5;return mk(`${x} और ${y} का ${h?'म.स. (HCF)':'ल.स. (LCM)'} क्या है?`,''+(h?g:g*p*q),h?nd(g).map(String):nd(g*p*q).map(String),h?`दोनों संख्याओं का सबसे बड़ा उभयनिष्ठ गुणनखंड ${g} है`:`LCM = ${x}×${y} ÷ HCF = ${g*p*q}`)}
+const Lc=g*p*q;return mk(`दो संख्याओं का म.स. ${g} और ल.स. ${Lc} है। एक संख्या ${x} है तो दूसरी संख्या क्या होगी?`,''+y,nd(y).concat([g*p,Lc-x]).map(String),`म.स. × ल.स. = दोनों संख्याओं का गुणनफल, इसलिए दूसरी संख्या = ${M('\\frac{'+g+'\\times '+Lc+'}{'+x+'}='+y)}`)},
+ari(L){if(L===1){const a=R(10,50),b=R(5,40),c=R(1,9),v=a+b-c;return mk(`सरल करो: ${M(a+'+'+b+'-'+c)}`,M(v),nd(v).map(M),`${a}+${b}=${a+b}, फिर ${a+b}−${c}=${v}`)}
+if(L===2){const a=R(5,20),b=R(2,9),c=R(2,9),d=R(1,15),v=a+b*c-d;return mk(`सरल करो: ${M(a+'+'+b+'\\times '+c+'-'+d)}`,M(v),nd(v).map(M),`पहले गुणा: ${b}×${c}=${b*c}, फिर ${a}+${b*c}−${d}=${v}`)}
+const a=R(3,15),b=R(3,15),c=R(2,9),e=R(2,6),k=R(2,9),d=e*k,v=(a+b)*c-k;
+return mk(`सरल करो: ${M('('+a+'+'+b+')\\times '+c+'-'+d+'\\div '+e)}`,M(v),nd(v).concat([(a+b)*c-d,(a+b)*c-d/e+e]).map(M),`BODMAS: पहले कोष्ठक ${a+b}, फिर गुणा ${(a+b)*c} और भाग ${d}÷${e}=${k}, अंत में ${(a+b)*c}−${k}=${v}`)}};
 const TOP=[['frac','भिन्न','6–8','$\\frac{3}{4}+\\frac{5}{6}$ का मान निकालो'],['pct','प्रतिशत','6–8','240 का 15% कितना होता है?'],['pl','लाभ और हानि','7–10','500 रुपये की चीज़ 20% लाभ पर बेची गई, विक्रय मूल्य बताओ'],['alg','बीजगणित और समीकरण','7–12','हल करो: $3x+5=20$'],['exp','घातांक और मूल','8–10','$2^3\\times 2^4$ और $\\sqrt{169}$ का मान निकालो'],['geo','ज्यामिति','6–10','त्रिभुज के दो कोण 50° और 60° हैं, तीसरा कोण निकालो'],['men','क्षेत्रमिति','7–12','त्रिज्या 14 सेमी वाले वृत्त का क्षेत्रफल निकालो'],['num','संख्या पद्धति','6–10','12 और 18 का ल.स. और म.स. निकालो'],['ari','अंकगणित','6–8','सरल करो: $12+6\\times 3-4$']];
-let cur=null,tp='all',score=0,idx=0,picked=null,done=false;const N=10;
+let cur=null,lv=1,tp='all',score=0,idx=0,picked=null,done=false;const N=10,LV=['','आसान 🟢','मध्यम 🟡','कठिन 🔴'];
 $('#qchips').innerHTML=[['all','सभी विषय']].concat(TOP.map(t=>[t[0],t[1]])).map(t=>`<button class="chip${t[0]==='all'?' on':''}" data-k="${t[0]}">${t[1]}</button>`).join('');
+$('#lchips').innerHTML=[1,2,3].map(l=>`<button class="chip${l===1?' on':''}" data-l="${l}">${LV[l]}</button>`).join('');
+$('#lchips').onclick=e=>{const l=+e.target.dataset.l;if(!l)return;lv=l;$$('#lchips .chip').forEach(c=>c.classList.toggle('on',+c.dataset.l===l));newRound()};
 $('#qchips').onclick=e=>{const k=e.target.dataset.k;if(!k)return;tp=k;$$('#qchips .chip').forEach(c=>c.classList.toggle('on',c.dataset.k===k));newRound()};
 function newRound(){score=0;idx=0;next()}
-function next(){picked=null;done=false;if(idx>=N)return end();const k=tp==='all'?pick(TOP)[0]:tp;cur=G[k]();draw()}
-function draw(){$('#qn').textContent='सवाल '+(idx+1)+' / '+N;$('#sc').textContent='⭐ स्कोर: '+score;$('#pbar').style.width=(idx/N*100)+'%';
+function next(){picked=null;done=false;if(idx>=N)return end();const k=tp==='all'?pick(TOP)[0]:tp;cur=G[k](lv);draw()}
+function draw(){$('#qn').textContent=LV[lv]+' • सवाल '+(idx+1)+' / '+N;$('#sc').textContent='⭐ स्कोर: '+score;$('#pbar').style.width=(idx/N*100)+'%';
 $('#qbox').innerHTML=`<p class="qt">${cur.q}</p>`+cur.o.map((o,i)=>`<button class="opt" data-i="${i}">${'अबसद'[i]}) ${o}</button>`).join('')+'<div class="row"><button class="btn" id="sub" disabled>उत्तर जमा करो</button></div><div id="fb"></div>';tex($('#qbox'))}
 $('#qbox').onclick=e=>{const b=e.target.closest('.opt'),s=e.target.closest('#sub'),n=e.target.closest('#nx'),r=e.target.closest('#rs');
 if(b&&!done){picked=+b.dataset.i;$$('.opt').forEach(x=>x.classList.toggle('sel',x===b));$('#sub').disabled=false}
